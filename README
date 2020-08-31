@@ -1,0 +1,13 @@
+---
+
+## Installation
+
+npm install -g typescript
+npm install -g uglify-js
+
+tsc samples/src/*.{ts,tsx,.d.ts} --jsx react --jsxFactory Jsx.createElement --jsxFragmentFactory Jsx.createFragment -m ES6 --target es3
+uglifyjs --mangle --compress -o samples.min.js -- src/*.js
+
+## Simple Server
+
+python3 -m http.server 8000
